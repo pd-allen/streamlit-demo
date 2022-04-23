@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from apps import home, heatmap, upload  # import your app modules here
+from apps import home, heatmap, upload, vector  # import your app modules here
 
 st.set_page_config(page_title="Streamlit Geospatial", layout="wide")
 
@@ -11,6 +11,7 @@ apps = [
     {"func": home.app, "title": "Home", "icon": "house"},
     {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
     {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
+    {"func": vector.app, "title": "Vector", "icon": "bounding-box"},
 ]
 
 titles = [app["title"] for app in apps]
@@ -36,7 +37,8 @@ with st.sidebar:
     st.sidebar.title("About")
     st.sidebar.info(
         """
-        This web [app](https://share.streamlit.io/giswqs/streamlit-template) is maintained by [Qiusheng Wu](https://wetlands.io). You can follow me on social media:
+        This web [app](https://share.streamlit.io/giswqs/streamlit-template) was created by [Qiusheng Wu](https://wetlands.io). His leafmap module is fantastic, well worth a look.  (https://leafmap.org/)
+        You can follow him on social media:
             [GitHub](https://github.com/giswqs) | [Twitter](https://twitter.com/giswqs) | [YouTube](https://www.youtube.com/c/QiushengWu) | [LinkedIn](https://www.linkedin.com/in/qiushengwu).
         
         Source code: <https://github.com/giswqs/streamlit-template>
