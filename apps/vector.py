@@ -20,7 +20,7 @@ def app():
         leafmap.download_from_url(landsat_url, landsat, out_dir, unzip=False)   
     
     m = leafmap.Map()
-    
+    #load images
     m.add_local_tile(dem, palette='viridis', layer_name="DEM")
     m.add_local_tile(landsat,  layer_name="Landsat")
     m.to_streamlit(height=900,width=1200)
